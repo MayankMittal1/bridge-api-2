@@ -96,9 +96,10 @@ router.get("/checkUserStakeStatus", async (req, res, next) => {
   if (Math.max(...filteredFuseTransactions) >= MIN_VALUE_IN_USD) {
     res.status(200);
     res.json({ message: true });
+  } else {
+    res.status(200);
+    res.json({ message: false });
   }
-  res.status(200);
-  res.json({ message: false });
 });
 
 module.exports = router;
